@@ -9,7 +9,11 @@ const app = express();
 
 app.use(errorMiddleware);
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({
+  origin: 'https://slot-swapper-cyan.vercel.app/', // ← replace with actual frontend URL
+  credentials: true
+}));
+
 app.use(express.json());
 
 
